@@ -20,11 +20,11 @@ Resources:
         - arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
         - arn:aws:iam::aws:policy/service-role/AWSDeepRacerServiceRolePolicy
       MaxSessionDuration: 43200
-  DPR401Notebook:
+  DRLogNotebook:
     Type: AWS::SageMaker::NotebookInstance
     Properties: 
       PlatformIdentifier: notebook-al2-v1
-      DefaultCodeRepository: https://github.com/aws-deepracer/aws-deepracer-workshops.git
+      DefaultCodeRepository: https://github.com/jeremypedersen/deepracer-deepstats.git
       DirectInternetAccess: Enabled
       InstanceType: ml.t3.xlarge
       NotebookInstanceName: DRLog-notebook
