@@ -26,7 +26,7 @@ Resources:
       PlatformIdentifier: notebook-al2-v1
       DefaultCodeRepository: https://github.com/jeremypedersen/deepracer-deepstats.git
       DirectInternetAccess: Enabled
-      InstanceType: ml.t3.xlarge
+      InstanceType: ml.t3.large
       NotebookInstanceName: DRLog-notebook
       RoleArn: !GetAtt DRLogAnalysisRole.Arn
       RootAccess: Enabled
