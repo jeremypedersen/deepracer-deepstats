@@ -14,6 +14,10 @@ The notebooks here borrow heavily from existing code you can find online. In par
 
 Happy Racing! 
 
+## A quick note on the repository's contents
+
+All of the staging and temporary files created while unpacking logs and models have been committed alongside the Jupyter Notebook file, so you can see what happens after a successful run of the notebook. 
+
 ## Testing the code
 
 Example models, evaluation logs, and training logs are located in `local_model_files`. Comment out the relevant code under **Fetch Logs and (Optionally) DeepRacer Model Checkpoint** in `DeepRacer Log Analysis.ipynb` to try them out! 
