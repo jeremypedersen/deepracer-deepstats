@@ -1,24 +1,24 @@
 done_condition: 
 <built-in function any>
 sess: 
-agent: <tensorflow.python.client.session.Session object at 0x7f4c1aa3f4e0>
+agent: <tensorflow.python.client.session.Session object at 0x7f91442aa0d0>
 
 level_managers: 
-0: <markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f4c1a91a7b8>
+0: <markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f914429bf40>
 
 top_level_manager: 
-<markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f4c1a91a7b8>
+<markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f914429bf40>
 environments: 
-0: <markov.environments.deepracer_racetrack_env.DeepRacerRacetrackEnv object at 0x7f4c1a91a080>
+0: <markov.environments.deepracer_racetrack_env.DeepRacerRacetrackEnv object at 0x7f914429bf10>
 
 heatup_steps: 
-<rl_coach.core_types.EnvironmentSteps object at 0x7f4c1af5cb38>
+<rl_coach.core_types.EnvironmentSteps object at 0x7f913f0df340>
 evaluation_steps: 
-<rl_coach.core_types.EnvironmentEpisodes object at 0x7f4c1af5c9e8>
+<rl_coach.core_types.EnvironmentEpisodes object at 0x7f913f0df2b0>
 steps_between_evaluation_periods: 
-<rl_coach.core_types.EnvironmentEpisodes object at 0x7f4c1b89b8d0>
+<rl_coach.core_types.EnvironmentEpisodes object at 0x7f913f0df040>
 improve_steps: 
-<rl_coach.core_types.TrainingSteps object at 0x7f4c1b89ba90>
+<rl_coach.core_types.TrainingSteps object at 0x7f913f0df1f0>
 visualization_parameters: 
 "VisualizationParameters" {
     "add_rendered_image_to_env_response": false,
@@ -93,26 +93,26 @@ False
 num_checkpoints_to_keep: 
 4
 graph_creation_time: 
-1704699259.458179
+1715150997.7888553
 last_checkpoint_saving_time: 
-1704699259.0510519
+1715150997.0858474
 total_steps_counters: 
-RunPhase.HEATUP: <rl_coach.core_types.TotalStepsCounter object at 0x7f4c1af0e2b0>
-RunPhase.TRAIN: <rl_coach.core_types.TotalStepsCounter object at 0x7f4c1af0e358>
-RunPhase.TEST: <rl_coach.core_types.TotalStepsCounter object at 0x7f4c1af0e390>
+RunPhase.HEATUP: <rl_coach.core_types.TotalStepsCounter object at 0x7f913f0c92b0>
+RunPhase.TRAIN: <rl_coach.core_types.TotalStepsCounter object at 0x7f913f0c9100>
+RunPhase.TEST: <rl_coach.core_types.TotalStepsCounter object at 0x7f913f0c9220>
 
 checkpoint_id: 
 0
 checkpoint_saver: 
-agent: <rl_coach.saver.SaverCollection object at 0x7f4c1a6022e8>
+agent: <rl_coach.saver.SaverCollection object at 0x7f9144e875e0>
 
 checkpoint_state_updater: 
 agent: None
 
 graph_logger: 
-<rl_coach.logger.Logger object at 0x7f4c1af0e3c8>
+<rl_coach.logger.Logger object at 0x7f913f0c9580>
 data_store: 
-<markov.s3_boto_data_store.S3BotoDataStore object at 0x7f4c1a641e10>
+<markov.s3_boto_data_store.S3BotoDataStore object at 0x7f914429be80>
 is_batch_rl: 
 False
 time_metric: 
@@ -182,8 +182,8 @@ env_params:
                         "num_elements": 2,
                         "scale_action_space": true,
                         "scaled_up_action_space_bounds": {
-                            "high": "array([30.,  1.])",
-                            "low": "array([-30. ,   0.5])"
+                            "high": "array([30. ,  1.5])",
+                            "low": "array([-30.,   1.])"
                         },
                         "__class__": "ScalableBoxActionSpace"
                     },
@@ -195,8 +195,8 @@ env_params:
                         "_model_metadata": {
                             "action_space": {
                                 "speed": {
-                                    "high": 1.0,
-                                    "low": 0.5
+                                    "high": 1.5,
+                                    "low": 1.0
                                 },
                                 "steering_angle": {
                                     "high": 30.0,
@@ -225,7 +225,7 @@ env_params:
                             "_session": null,
                             "__class__": "S3Client"
                         },
-                        "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/d76b80a3-445c-41e1-97dd-f84c0e66cd82/model_metadata.json",
+                        "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/e5aed8ad-ece1-4fee-a6e6-cd4a9158743a/model_metadata.json",
                         "__class__": "ModelMetadata"
                     },
                     "__class__": "TrainingCtrl"
@@ -306,8 +306,8 @@ env_params:
                     "num_elements": 2,
                     "scale_action_space": true,
                     "scaled_up_action_space_bounds": {
-                        "high": "array([30.,  1.])",
-                        "low": "array([-30. ,   0.5])"
+                        "high": "array([30. ,  1.5])",
+                        "low": "array([-30.,   1.])"
                     },
                     "__class__": "ScalableBoxActionSpace"
                 },
@@ -652,8 +652,8 @@ agents_params:
                 "num_elements": 2,
                 "scale_action_space": true,
                 "scaled_up_action_space_bounds": {
-                    "high": "array([30.,  1.])",
-                    "low": "array([-30. ,   0.5])"
+                    "high": "array([30. ,  1.5])",
+                    "low": "array([-30.,   1.])"
                 },
                 "__class__": "ScalableBoxActionSpace"
             },
@@ -665,8 +665,8 @@ agents_params:
                 "_model_metadata": {
                     "action_space": {
                         "speed": {
-                            "high": 1.0,
-                            "low": 0.5
+                            "high": 1.5,
+                            "low": 1.0
                         },
                         "steering_angle": {
                             "high": 30.0,
@@ -695,7 +695,7 @@ agents_params:
                     "_session": null,
                     "__class__": "S3Client"
                 },
-                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/d76b80a3-445c-41e1-97dd-f84c0e66cd82/model_metadata.json",
+                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/e5aed8ad-ece1-4fee-a6e6-cd4a9158743a/model_metadata.json",
                 "__class__": "ModelMetadata"
             },
             "__class__": "TrainingCtrl"
@@ -776,8 +776,8 @@ agents_params:
             "num_elements": 2,
             "scale_action_space": true,
             "scaled_up_action_space_bounds": {
-                "high": "array([30.,  1.])",
-                "low": "array([-30. ,   0.5])"
+                "high": "array([30. ,  1.5])",
+                "low": "array([-30.,   1.])"
             },
             "__class__": "ScalableBoxActionSpace"
         },
@@ -1095,8 +1095,8 @@ agent_params:
                 "num_elements": 2,
                 "scale_action_space": true,
                 "scaled_up_action_space_bounds": {
-                    "high": "array([30.,  1.])",
-                    "low": "array([-30. ,   0.5])"
+                    "high": "array([30. ,  1.5])",
+                    "low": "array([-30.,   1.])"
                 },
                 "__class__": "ScalableBoxActionSpace"
             },
@@ -1108,8 +1108,8 @@ agent_params:
                 "_model_metadata": {
                     "action_space": {
                         "speed": {
-                            "high": 1.0,
-                            "low": 0.5
+                            "high": 1.5,
+                            "low": 1.0
                         },
                         "steering_angle": {
                             "high": 30.0,
@@ -1138,7 +1138,7 @@ agent_params:
                     "_session": null,
                     "__class__": "S3Client"
                 },
-                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/d76b80a3-445c-41e1-97dd-f84c0e66cd82/model_metadata.json",
+                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/e5aed8ad-ece1-4fee-a6e6-cd4a9158743a/model_metadata.json",
                 "__class__": "ModelMetadata"
             },
             "__class__": "TrainingCtrl"
@@ -1219,8 +1219,8 @@ agent_params:
             "num_elements": 2,
             "scale_action_space": true,
             "scaled_up_action_space_bounds": {
-                "high": "array([30.,  1.])",
-                "low": "array([-30. ,   0.5])"
+                "high": "array([30. ,  1.5])",
+                "low": "array([-30.,   1.])"
             },
             "__class__": "ScalableBoxActionSpace"
         },
@@ -1475,6 +1475,6 @@ agent_params:
 }
 
 memory_backend_params: 
-<markov.deepracer_memory.DeepRacerRedisPubSubMemoryBackendParameters object at 0x7f4c1a6ac710>
+<markov.deepracer_memory.DeepRacerRedisPubSubMemoryBackendParameters object at 0x7f913e7a77f0>
 data_store_params: 
-<markov.s3_boto_data_store.S3BotoDataStoreParameters object at 0x7f4c1a641dd8>
+<markov.s3_boto_data_store.S3BotoDataStoreParameters object at 0x7f914429bca0>
