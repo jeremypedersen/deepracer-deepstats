@@ -1,24 +1,24 @@
 done_condition: 
 <built-in function any>
 sess: 
-agent: <tensorflow.python.client.session.Session object at 0x7f16cc5df240>
+agent: <tensorflow.python.client.session.Session object at 0x7f4c1aa3f4e0>
 
 level_managers: 
-0: <markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f16cc5ac128>
+0: <markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f4c1a91a7b8>
 
 top_level_manager: 
-<markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f16cc5ac128>
+<markov.multi_agent_coach.multi_agent_level_manager.MultiAgentLevelManager object at 0x7f4c1a91a7b8>
 environments: 
-0: <markov.environments.deepracer_racetrack_env.DeepRacerRacetrackEnv object at 0x7f16cc5acb70>
+0: <markov.environments.deepracer_racetrack_env.DeepRacerRacetrackEnv object at 0x7f4c1a91a080>
 
 heatup_steps: 
-<rl_coach.core_types.EnvironmentSteps object at 0x7f16ccef1978>
+<rl_coach.core_types.EnvironmentSteps object at 0x7f4c1af5cb38>
 evaluation_steps: 
-<rl_coach.core_types.EnvironmentEpisodes object at 0x7f16ccef1940>
+<rl_coach.core_types.EnvironmentEpisodes object at 0x7f4c1af5c9e8>
 steps_between_evaluation_periods: 
-<rl_coach.core_types.EnvironmentEpisodes object at 0x7f16ccef1860>
+<rl_coach.core_types.EnvironmentEpisodes object at 0x7f4c1b89b8d0>
 improve_steps: 
-<rl_coach.core_types.TrainingSteps object at 0x7f16ccef1908>
+<rl_coach.core_types.TrainingSteps object at 0x7f4c1b89ba90>
 visualization_parameters: 
 "VisualizationParameters" {
     "add_rendered_image_to_env_response": false,
@@ -93,26 +93,26 @@ False
 num_checkpoints_to_keep: 
 4
 graph_creation_time: 
-1704773772.0633883
+1704699259.458179
 last_checkpoint_saving_time: 
-1704773771.7248793
+1704699259.0510519
 total_steps_counters: 
-RunPhase.HEATUP: <rl_coach.core_types.TotalStepsCounter object at 0x7f16cd95b978>
-RunPhase.TRAIN: <rl_coach.core_types.TotalStepsCounter object at 0x7f16cd95b9e8>
-RunPhase.TEST: <rl_coach.core_types.TotalStepsCounter object at 0x7f16ccf060b8>
+RunPhase.HEATUP: <rl_coach.core_types.TotalStepsCounter object at 0x7f4c1af0e2b0>
+RunPhase.TRAIN: <rl_coach.core_types.TotalStepsCounter object at 0x7f4c1af0e358>
+RunPhase.TEST: <rl_coach.core_types.TotalStepsCounter object at 0x7f4c1af0e390>
 
 checkpoint_id: 
 0
 checkpoint_saver: 
-agent: <rl_coach.saver.SaverCollection object at 0x7f16cc56ac18>
+agent: <rl_coach.saver.SaverCollection object at 0x7f4c1a6022e8>
 
 checkpoint_state_updater: 
 agent: None
 
 graph_logger: 
-<rl_coach.logger.Logger object at 0x7f16ccf06208>
+<rl_coach.logger.Logger object at 0x7f4c1af0e3c8>
 data_store: 
-<markov.s3_boto_data_store.S3BotoDataStore object at 0x7f16cc5acb00>
+<markov.s3_boto_data_store.S3BotoDataStore object at 0x7f4c1a641e10>
 is_batch_rl: 
 False
 time_metric: 
@@ -172,14 +172,20 @@ env_params:
             "env_agent": {
                 "_ctrl_": {
                     "_action_space_": {
-                        "_high": "array([9.])",
-                        "_low": "array([0.])",
-                        "_shape": "array([1])",
-                        "default_action": 4,
+                        "_high": "array([1., 1.])",
+                        "_low": "array([-1., -1.])",
+                        "_shape": "array([2])",
+                        "default_action": "array([0., 0.])",
                         "descriptions": {},
+                        "max_abs_range": "array([1., 1.])",
                         "num_dimensions": 1,
-                        "num_elements": 1,
-                        "__class__": "DiscreteActionSpace"
+                        "num_elements": 2,
+                        "scale_action_space": true,
+                        "scaled_up_action_space_bounds": {
+                            "high": "array([30.,  1.])",
+                            "low": "array([-30. ,   0.5])"
+                        },
+                        "__class__": "ScalableBoxActionSpace"
                     },
                     "_agent_name_": "racecar",
                     "_model_metadata_": {
@@ -188,58 +194,16 @@ env_params:
                         "_local_path": "./custom_files/agent/model_metadata.json",
                         "_model_metadata": {
                             "action_space": {
-                                "0": {
-                                    "index": 0,
-                                    "speed": 1.0,
-                                    "steering_angle": -30.0
+                                "speed": {
+                                    "high": 1.0,
+                                    "low": 0.5
                                 },
-                                "1": {
-                                    "index": 1,
-                                    "speed": 1.2,
-                                    "steering_angle": -30.0
-                                },
-                                "2": {
-                                    "index": 2,
-                                    "speed": 1.0,
-                                    "steering_angle": -15.0
-                                },
-                                "3": {
-                                    "index": 3,
-                                    "speed": 1.2,
-                                    "steering_angle": -15.0
-                                },
-                                "4": {
-                                    "index": 4,
-                                    "speed": 1.0,
-                                    "steering_angle": 0.0
-                                },
-                                "5": {
-                                    "index": 5,
-                                    "speed": 1.2,
-                                    "steering_angle": 0.0
-                                },
-                                "6": {
-                                    "index": 6,
-                                    "speed": 1.0,
-                                    "steering_angle": 15.0
-                                },
-                                "7": {
-                                    "index": 7,
-                                    "speed": 1.2,
-                                    "steering_angle": 15.0
-                                },
-                                "8": {
-                                    "index": 8,
-                                    "speed": 1.0,
-                                    "steering_angle": 30.0
-                                },
-                                "9": {
-                                    "index": 9,
-                                    "speed": 1.2,
-                                    "steering_angle": 30.0
+                                "steering_angle": {
+                                    "high": 30.0,
+                                    "low": -30.0
                                 }
                             },
-                            "action_space_type": "discrete",
+                            "action_space_type": "continuous",
                             "lidar_config": {
                                 "clipping_dist": 2.0,
                                 "num_sectors": 8,
@@ -261,7 +225,7 @@ env_params:
                             "_session": null,
                             "__class__": "S3Client"
                         },
-                        "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/474ccf4a-278a-4f9d-b1da-d54e954d5840/model_metadata.json",
+                        "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/d76b80a3-445c-41e1-97dd-f84c0e66cd82/model_metadata.json",
                         "__class__": "ModelMetadata"
                     },
                     "__class__": "TrainingCtrl"
@@ -332,17 +296,32 @@ env_params:
             },
             "exploration": {
                 "action_space": {
-                    "_high": "array([9.])",
-                    "_low": "array([0.])",
-                    "_shape": "array([1])",
-                    "default_action": 4,
+                    "_high": "array([1., 1.])",
+                    "_low": "array([-1., -1.])",
+                    "_shape": "array([2])",
+                    "default_action": "array([0., 0.])",
                     "descriptions": {},
+                    "max_abs_range": "array([1., 1.])",
                     "num_dimensions": 1,
-                    "num_elements": 1,
-                    "__class__": "DiscreteActionSpace"
+                    "num_elements": 2,
+                    "scale_action_space": true,
+                    "scaled_up_action_space_bounds": {
+                        "high": "array([30.,  1.])",
+                        "low": "array([-30. ,   0.5])"
+                    },
+                    "__class__": "ScalableBoxActionSpace"
                 },
-                "use_stochastic_evaluation_policy": false,
-                "__class__": "DeepRacerCategoricalParameters"
+                "evaluation_noise": 0.05,
+                "noise_as_percentage_from_action_space": true,
+                "noise_schedule": {
+                    "current_value": 0.1,
+                    "decay_delta": 0.0,
+                    "decay_steps": 50000,
+                    "final_value": 0.1,
+                    "initial_value": 0.1,
+                    "__class__": "LinearSchedule"
+                },
+                "__class__": "AdditiveNoiseParameters"
             },
             "full_name_id": "main_level/agent",
             "input_filter": {
@@ -663,14 +642,20 @@ agents_params:
     "env_agent": {
         "_ctrl_": {
             "_action_space_": {
-                "_high": "array([9.])",
-                "_low": "array([0.])",
-                "_shape": "array([1])",
-                "default_action": 4,
+                "_high": "array([1., 1.])",
+                "_low": "array([-1., -1.])",
+                "_shape": "array([2])",
+                "default_action": "array([0., 0.])",
                 "descriptions": {},
+                "max_abs_range": "array([1., 1.])",
                 "num_dimensions": 1,
-                "num_elements": 1,
-                "__class__": "DiscreteActionSpace"
+                "num_elements": 2,
+                "scale_action_space": true,
+                "scaled_up_action_space_bounds": {
+                    "high": "array([30.,  1.])",
+                    "low": "array([-30. ,   0.5])"
+                },
+                "__class__": "ScalableBoxActionSpace"
             },
             "_agent_name_": "racecar",
             "_model_metadata_": {
@@ -679,58 +664,16 @@ agents_params:
                 "_local_path": "./custom_files/agent/model_metadata.json",
                 "_model_metadata": {
                     "action_space": {
-                        "0": {
-                            "index": 0,
-                            "speed": 1.0,
-                            "steering_angle": -30.0
+                        "speed": {
+                            "high": 1.0,
+                            "low": 0.5
                         },
-                        "1": {
-                            "index": 1,
-                            "speed": 1.2,
-                            "steering_angle": -30.0
-                        },
-                        "2": {
-                            "index": 2,
-                            "speed": 1.0,
-                            "steering_angle": -15.0
-                        },
-                        "3": {
-                            "index": 3,
-                            "speed": 1.2,
-                            "steering_angle": -15.0
-                        },
-                        "4": {
-                            "index": 4,
-                            "speed": 1.0,
-                            "steering_angle": 0.0
-                        },
-                        "5": {
-                            "index": 5,
-                            "speed": 1.2,
-                            "steering_angle": 0.0
-                        },
-                        "6": {
-                            "index": 6,
-                            "speed": 1.0,
-                            "steering_angle": 15.0
-                        },
-                        "7": {
-                            "index": 7,
-                            "speed": 1.2,
-                            "steering_angle": 15.0
-                        },
-                        "8": {
-                            "index": 8,
-                            "speed": 1.0,
-                            "steering_angle": 30.0
-                        },
-                        "9": {
-                            "index": 9,
-                            "speed": 1.2,
-                            "steering_angle": 30.0
+                        "steering_angle": {
+                            "high": 30.0,
+                            "low": -30.0
                         }
                     },
-                    "action_space_type": "discrete",
+                    "action_space_type": "continuous",
                     "lidar_config": {
                         "clipping_dist": 2.0,
                         "num_sectors": 8,
@@ -752,7 +695,7 @@ agents_params:
                     "_session": null,
                     "__class__": "S3Client"
                 },
-                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/474ccf4a-278a-4f9d-b1da-d54e954d5840/model_metadata.json",
+                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/d76b80a3-445c-41e1-97dd-f84c0e66cd82/model_metadata.json",
                 "__class__": "ModelMetadata"
             },
             "__class__": "TrainingCtrl"
@@ -823,17 +766,32 @@ agents_params:
     },
     "exploration": {
         "action_space": {
-            "_high": "array([9.])",
-            "_low": "array([0.])",
-            "_shape": "array([1])",
-            "default_action": 4,
+            "_high": "array([1., 1.])",
+            "_low": "array([-1., -1.])",
+            "_shape": "array([2])",
+            "default_action": "array([0., 0.])",
             "descriptions": {},
+            "max_abs_range": "array([1., 1.])",
             "num_dimensions": 1,
-            "num_elements": 1,
-            "__class__": "DiscreteActionSpace"
+            "num_elements": 2,
+            "scale_action_space": true,
+            "scaled_up_action_space_bounds": {
+                "high": "array([30.,  1.])",
+                "low": "array([-30. ,   0.5])"
+            },
+            "__class__": "ScalableBoxActionSpace"
         },
-        "use_stochastic_evaluation_policy": false,
-        "__class__": "DeepRacerCategoricalParameters"
+        "evaluation_noise": 0.05,
+        "noise_as_percentage_from_action_space": true,
+        "noise_schedule": {
+            "current_value": 0.1,
+            "decay_delta": 0.0,
+            "decay_steps": 50000,
+            "final_value": 0.1,
+            "initial_value": 0.1,
+            "__class__": "LinearSchedule"
+        },
+        "__class__": "AdditiveNoiseParameters"
     },
     "full_name_id": "main_level/agent",
     "input_filter": {
@@ -1127,14 +1085,20 @@ agent_params:
     "env_agent": {
         "_ctrl_": {
             "_action_space_": {
-                "_high": "array([9.])",
-                "_low": "array([0.])",
-                "_shape": "array([1])",
-                "default_action": 4,
+                "_high": "array([1., 1.])",
+                "_low": "array([-1., -1.])",
+                "_shape": "array([2])",
+                "default_action": "array([0., 0.])",
                 "descriptions": {},
+                "max_abs_range": "array([1., 1.])",
                 "num_dimensions": 1,
-                "num_elements": 1,
-                "__class__": "DiscreteActionSpace"
+                "num_elements": 2,
+                "scale_action_space": true,
+                "scaled_up_action_space_bounds": {
+                    "high": "array([30.,  1.])",
+                    "low": "array([-30. ,   0.5])"
+                },
+                "__class__": "ScalableBoxActionSpace"
             },
             "_agent_name_": "racecar",
             "_model_metadata_": {
@@ -1143,58 +1107,16 @@ agent_params:
                 "_local_path": "./custom_files/agent/model_metadata.json",
                 "_model_metadata": {
                     "action_space": {
-                        "0": {
-                            "index": 0,
-                            "speed": 1.0,
-                            "steering_angle": -30.0
+                        "speed": {
+                            "high": 1.0,
+                            "low": 0.5
                         },
-                        "1": {
-                            "index": 1,
-                            "speed": 1.2,
-                            "steering_angle": -30.0
-                        },
-                        "2": {
-                            "index": 2,
-                            "speed": 1.0,
-                            "steering_angle": -15.0
-                        },
-                        "3": {
-                            "index": 3,
-                            "speed": 1.2,
-                            "steering_angle": -15.0
-                        },
-                        "4": {
-                            "index": 4,
-                            "speed": 1.0,
-                            "steering_angle": 0.0
-                        },
-                        "5": {
-                            "index": 5,
-                            "speed": 1.2,
-                            "steering_angle": 0.0
-                        },
-                        "6": {
-                            "index": 6,
-                            "speed": 1.0,
-                            "steering_angle": 15.0
-                        },
-                        "7": {
-                            "index": 7,
-                            "speed": 1.2,
-                            "steering_angle": 15.0
-                        },
-                        "8": {
-                            "index": 8,
-                            "speed": 1.0,
-                            "steering_angle": 30.0
-                        },
-                        "9": {
-                            "index": 9,
-                            "speed": 1.2,
-                            "steering_angle": 30.0
+                        "steering_angle": {
+                            "high": 30.0,
+                            "low": -30.0
                         }
                     },
-                    "action_space_type": "discrete",
+                    "action_space_type": "continuous",
                     "lidar_config": {
                         "clipping_dist": 2.0,
                         "num_sectors": 8,
@@ -1216,7 +1138,7 @@ agent_params:
                     "_session": null,
                     "__class__": "S3Client"
                 },
-                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/474ccf4a-278a-4f9d-b1da-d54e954d5840/model_metadata.json",
+                "_s3_key": "data-71e463c7-0be6-4543-af25-a2633a0d5549/models/d76b80a3-445c-41e1-97dd-f84c0e66cd82/model_metadata.json",
                 "__class__": "ModelMetadata"
             },
             "__class__": "TrainingCtrl"
@@ -1287,17 +1209,32 @@ agent_params:
     },
     "exploration": {
         "action_space": {
-            "_high": "array([9.])",
-            "_low": "array([0.])",
-            "_shape": "array([1])",
-            "default_action": 4,
+            "_high": "array([1., 1.])",
+            "_low": "array([-1., -1.])",
+            "_shape": "array([2])",
+            "default_action": "array([0., 0.])",
             "descriptions": {},
+            "max_abs_range": "array([1., 1.])",
             "num_dimensions": 1,
-            "num_elements": 1,
-            "__class__": "DiscreteActionSpace"
+            "num_elements": 2,
+            "scale_action_space": true,
+            "scaled_up_action_space_bounds": {
+                "high": "array([30.,  1.])",
+                "low": "array([-30. ,   0.5])"
+            },
+            "__class__": "ScalableBoxActionSpace"
         },
-        "use_stochastic_evaluation_policy": false,
-        "__class__": "DeepRacerCategoricalParameters"
+        "evaluation_noise": 0.05,
+        "noise_as_percentage_from_action_space": true,
+        "noise_schedule": {
+            "current_value": 0.1,
+            "decay_delta": 0.0,
+            "decay_steps": 50000,
+            "final_value": 0.1,
+            "initial_value": 0.1,
+            "__class__": "LinearSchedule"
+        },
+        "__class__": "AdditiveNoiseParameters"
     },
     "full_name_id": "main_level/agent",
     "input_filter": {
@@ -1538,6 +1475,6 @@ agent_params:
 }
 
 memory_backend_params: 
-<markov.deepracer_memory.DeepRacerRedisPubSubMemoryBackendParameters object at 0x7f16cc8e9ac8>
+<markov.deepracer_memory.DeepRacerRedisPubSubMemoryBackendParameters object at 0x7f4c1a6ac710>
 data_store_params: 
-<markov.s3_boto_data_store.S3BotoDataStoreParameters object at 0x7f16cc5acac8>
+<markov.s3_boto_data_store.S3BotoDataStoreParameters object at 0x7f4c1a641dd8>
