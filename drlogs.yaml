@@ -1,0 +1,34 @@
+Description: Template to create Notebook environment for Log Analysis
+
+Resources:
+  DRLogAnalysisRole:
+    Type: AWS::IAM::Role
+    Properties: 
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - sagemaker.amazonaws.com
+                - robomaker.amazonaws.com
+            Action:
+              - 'sts:AssumeRole'
+      Description: Role for Log Analysis
+      RoleName: DRLogAnalysisRole
+      ManagedPolicyArns: 
+        - arn:aws:iam::aws:policy/AmazonSageMakerFullAccess
+        - arn:aws:iam::aws:policy/service-role/AWSDeepRacerServiceRolePolicy
+      MaxSessionDuration: 43200
+  DRLogNotebook:
+    Type: AWS::SageMaker::NotebookInstance
+    Properties: 
+      PlatformIdentifier: notebook-al2-v1
+      DefaultCodeRepository: https://github.com/jeremypedersen/deepracer-deepstats.git
+      DirectInternetAccess: Enabled
+      InstanceType: ml.t3.large
+      NotebookInstanceName: DRLog-notebook
+      RoleArn: !GetAtt DRLogAnalysisRole.Arn
+      RootAccess: Enabled
+      VolumeSizeInGB: 10
+
