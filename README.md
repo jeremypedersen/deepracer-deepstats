@@ -1,3 +1,5 @@
+**Last Updated: 2024-07-15**
+
 # DeepRacer DeepStats
 
 **Code Last Tested On: 2024-01-09**
