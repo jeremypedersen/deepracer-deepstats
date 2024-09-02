@@ -1,8 +1,7 @@
-**Last Updated: 2024-07-15**
+**Last Updated:** 2024-09-02
+**Last Tested:** PENDING
 
 # DeepRacer DeepStats
-
-**Code Last Tested On: 2024-01-09**
 
 Welcome! The code here consists of:
 
