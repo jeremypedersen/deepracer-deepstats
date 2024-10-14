@@ -1,5 +1,5 @@
 - **Last Updated:** 2024-09-02
-- **Last Tested:** PENDING
+- **Last Tested:** (Last tested early 2024 - no plans to test again as this repo is now a public archive) 
 
 # DeepRacer DeepStats
 
